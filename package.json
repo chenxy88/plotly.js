@@ -52,7 +52,8 @@
     "version": "npm run build && npm run no-bad-char && git add -A dist build src/version.js",
     "postversion": "node -e \"console.log('Version bumped and committed. If ok, run: git push && git push --tags')\"",
     "postpublish": "node tasks/sync_packages.js",
-    "postshrinkwrap": "chttps ."
+    "install-mathjax": "git clone --branch 2.3.0 --depth=1 git@github.com:mathjax/MathJax.git node_modules/mathjax",
+    "postshrinkwrap": "chttps . && npm run install-mathjax"
   },
   "browserify": {
     "transform": [
