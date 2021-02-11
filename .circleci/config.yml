@@ -51,6 +51,8 @@ jobs:
           at: ~/
       - run:
           name: Run jasmine tests (part A)
+          environment:
+            NODE_OPTIONS: --max_old_space_size=4096
           command: ./.circleci/test.sh no-gl-jasmine
 
   webgl-jasmine:
@@ -64,6 +66,8 @@ jobs:
           at: ~/
       - run:
           name: Run jasmine tests (part B)
+          environment:
+            NODE_OPTIONS: --max_old_space_size=4096
           command: ./.circleci/test.sh webgl-jasmine
 
   no-gl-flaky-jasmine:
@@ -76,6 +80,8 @@ jobs:
           at: ~/
       - run:
           name: Run jasmine tests (part C)
+          environment:
+            NODE_OPTIONS: --max_old_space_size=4096
           command: ./.circleci/test.sh no-gl-flaky-jasmine
 
   stable-image:
@@ -138,6 +144,8 @@ jobs:
           at: ~/
       - run:
           name: Run jasmine tests (part D)
+          environment:
+            NODE_OPTIONS: --max_old_space_size=4096
           command: ./.circleci/test.sh jasmine-bundle
 
   publish-dist:
