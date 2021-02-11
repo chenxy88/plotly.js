@@ -22,7 +22,6 @@ jobs:
           name: Install dependencies
           command: |
             npm ci
-            npm run install-mathjax
       - run:
           name: List dependency versions
           command: |
